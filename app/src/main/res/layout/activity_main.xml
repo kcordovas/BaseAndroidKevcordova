@@ -7,6 +7,9 @@
         <variable
             name="activity"
             type="com.example.baseandroidkevcordova.MainActivity" />
+        <variable
+            name="viewmodel"
+            type="com.example.baseandroidkevcordova.MainViewModel" />
     </data>
 
     <ScrollView
@@ -22,6 +25,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/layout_horizontal_normal"
+                android:onClick="@{() -> viewmodel.sharedPreferences()}"
                 android:text="SharedPreferences" />
         </LinearLayout>
     </ScrollView>
