@@ -4,9 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="activity"
             type="com.example.baseandroidkevcordova.MainActivity" />
+
         <variable
             name="viewmodel"
             type="com.example.baseandroidkevcordova.MainViewModel" />
@@ -16,10 +18,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MainActivity">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <Button
                 android:id="@+id/button_shared_preferences"
                 android:layout_width="match_parent"
@@ -27,6 +31,27 @@
                 android:layout_margin="@dimen/layout_horizontal_normal"
                 android:onClick="@{() -> viewmodel.sharedPreferences()}"
                 android:text="SharedPreferences" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/layout_horizontal_normal"
+                android:onClick="@{() -> activity.requestPermissionSingle()}"
+                android:text="Dexter Permission" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/layout_horizontal_normal"
+                android:onClick="@{() -> activity.requestPermissionMultiple()}"
+                android:text="Dexter Permission Multiple" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/layout_horizontal_normal"
+                android:onClick="@{() -> viewmodel.dateFormat()}"
+                android:text="Date Utils" />
         </LinearLayout>
     </ScrollView>
 </layout>

@@ -4,14 +4,19 @@ import android.content.Context
 import androidx.preference.PreferenceManager
 import com.example.baseandroidmodulekevcordova.constants.KGeneralConstants
 import java.lang.IllegalArgumentException
+import java.lang.NullPointerException
 
 class KSharedPreferences(
     context: Context?,
     nameSharedPref: String = "KSharedPreferences",
     typeSharedPreferences: EKSharedPreferencesType = EKSharedPreferencesType.DEFAULT
 ) {
+    companion object {
+        private const val TAG = "KSharedPreferences"
+    }
     private var sharedPref = if (typeSharedPreferences == EKSharedPreferencesType.SETTINGS) {
-        PreferenceManager.getDefaultSharedPreferences(context)
+        context?.let { PreferenceManager.getDefaultSharedPreferences(it) }
+            ?: throw NullPointerException("$TAG:context is null")
     } else {
         context?.getSharedPreferences(nameSharedPref, Context.MODE_PRIVATE)
     }
