@@ -7,6 +7,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.example.baseandroidkevcordova.databinding.ActivityMainBinding
+import com.example.baseandroidmodulekevcordova.extensions.GlideTypeCrop
+import com.example.baseandroidmodulekevcordova.extensions.bindGlideImage
+import com.example.baseandroidmodulekevcordova.extensions.openWebPage
+import com.example.baseandroidmodulekevcordova.extensions.startActivityWithIntentApply
 import com.example.baseandroidmodulekevcordova.permissions.*
 import java.util.*
 
@@ -75,5 +79,18 @@ class MainActivity : AppCompatActivity() {
                 "requestPermission:Multiple:areAllPermissionGranted?${it?.areAllPermissionGranted}"
             )
         }
+    }
+
+    fun appliedActivityExtensions() {
+        openWebPage("https://developer.android.com")
+    }
+
+    fun changeRandomImage() {
+        binding.image.bindGlideImage(
+            "https://picsum.photos/200",
+            R.mipmap.ic_launcher,
+            R.drawable.ic_launcher_foreground,
+            GlideTypeCrop.CIRCLE_CROP
+        )
     }
 }

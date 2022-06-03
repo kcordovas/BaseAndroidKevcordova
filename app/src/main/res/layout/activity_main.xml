@@ -52,6 +52,22 @@
                 android:layout_margin="@dimen/layout_horizontal_normal"
                 android:onClick="@{() -> viewmodel.dateFormat()}"
                 android:text="Date Utils" />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/layout_horizontal_normal"
+                android:onClick="@{() -> activity.appliedActivityExtensions()}"
+                android:text="Common intents" />
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:onClick="@{() -> activity.changeRandomImage()}"
+                android:src="@mipmap/ic_launcher"
+                android:importantForAccessibility="no" />
+
         </LinearLayout>
     </ScrollView>
 </layout>
