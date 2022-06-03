@@ -3,6 +3,7 @@ package com.example.baseandroidkevcordova
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import com.example.baseandroidmodulekevcordova.constants.KGeneralConstants
+import com.example.baseandroidmodulekevcordova.security.KRandom
 import com.example.baseandroidmodulekevcordova.utils.KCalendarUtils
 import java.util.*
 
@@ -35,5 +36,18 @@ class MainViewModel : ViewModel() {
         Log.i(TAG, "dateFormat: $todayName")
         Log.i(TAG, "dateFormat:replace Divider date: $replaceDate")
         Log.i(TAG, "dateFormat:replace Divider date: $replaceTime")
+    }
+
+    fun randomGenerator() {
+        val randBool = KRandom.boolean()
+        val randInt = KRandom.int()
+        val randDouble = KRandom.double(0.1, 100.0)
+        val randUuid = KRandom.randUuid()
+        val secureRandInt = KRandom.secureInt(10)
+        Log.i(TAG, "randomGenerator:bool: $randBool")
+        Log.i(TAG, "randomGenerator:int: $randInt")
+        Log.i(TAG, "randomGenerator:double: $randDouble")
+        Log.i(TAG, "randomGenerator:UUid: $randUuid")
+        Log.i(TAG, "randomGenerator:secure Int: $secureRandInt")
     }
 }

@@ -10,7 +10,6 @@ import com.example.baseandroidkevcordova.databinding.ActivityMainBinding
 import com.example.baseandroidmodulekevcordova.extensions.GlideTypeCrop
 import com.example.baseandroidmodulekevcordova.extensions.bindGlideImage
 import com.example.baseandroidmodulekevcordova.extensions.openWebPage
-import com.example.baseandroidmodulekevcordova.extensions.startActivityWithIntentApply
 import com.example.baseandroidmodulekevcordova.permissions.*
 import java.util.*
 
