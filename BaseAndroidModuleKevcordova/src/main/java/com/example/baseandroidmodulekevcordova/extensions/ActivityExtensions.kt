@@ -21,11 +21,13 @@ inline fun <reified T : Activity> Context.startActivityWithIntentApply(body: Int
 fun Context.openWebPage(url: String) {
     val webPageUrl = Uri.parse(url)
     val intent = Intent(Intent.ACTION_VIEW, webPageUrl)
-    if (intent.resolveActivity(packageManager) != null) {
-        startActivity(intent)
+    packageManager?.let {
+        if (it.resolveActivity(intent, 0) != null) {
+            startActivity(intent)
+        }
     }
-
 }
+
 private fun showToast(
     context: Context,
     message: String,

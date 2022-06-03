@@ -4,7 +4,7 @@ plugins {
 }
 
 ext.versionMajor = 1
-ext.versionMinor = 0
+ext.versionMinor = 2
 ext.versionPatch = 0
 ext.versionClassifier = null
 
@@ -14,8 +14,8 @@ android {
     defaultConfig {
         minSdk 23
         targetSdk 32
-        versionCode generateVersionCode()
-        versionName generateVersionName()
+        versionCode formatVersionCode()
+        versionName formatVersionName()
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -36,11 +36,11 @@ android {
     }
 }
 
-private Integer generateVersionCode() {
+private Integer formatVersionCode() {
     return ext.versionMajor * 10000 + ext.versionMinor * 100 + ext.versionPatch
 }
 
-private String generateVersionName() {
+private String formatVersionName() {
     String versionName = "${ext.versionMajor}.${ext.versionMinor}.${ext.versionPatch}"
 
     if (ext.versionClassifier != null) {

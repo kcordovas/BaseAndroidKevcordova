@@ -10,6 +10,7 @@ import com.example.baseandroidkevcordova.databinding.ActivityMainBinding
 import com.example.baseandroidmodulekevcordova.extensions.GlideTypeCrop
 import com.example.baseandroidmodulekevcordova.extensions.bindGlideImage
 import com.example.baseandroidmodulekevcordova.extensions.openWebPage
+import com.example.baseandroidmodulekevcordova.extensions.runDefaultAnimation
 import com.example.baseandroidmodulekevcordova.permissions.*
 import java.util.*
 
@@ -91,5 +92,6 @@ class MainActivity : AppCompatActivity() {
             R.drawable.ic_launcher_foreground,
             GlideTypeCrop.CIRCLE_CROP
         )
+        binding.image.runDefaultAnimation(R.anim.kfadeout)
     }
 }
