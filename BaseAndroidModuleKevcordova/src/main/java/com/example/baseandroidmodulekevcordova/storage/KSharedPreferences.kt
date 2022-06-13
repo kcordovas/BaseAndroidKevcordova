@@ -41,6 +41,12 @@ class KSharedPreferences(
     fun getFloat(key: String): Float? = sharedPref?.getFloat(key, -1f)
     fun getLong(key: String): Long? = sharedPref?.getLong(key, -1L)
 
+    fun getString(key: String, defaultValue: String?): String? = sharedPref?.getString(key, defaultValue)
+    fun getBoolean(key: String, defaultValue: Boolean): Boolean? = sharedPref?.getBoolean(key, defaultValue)
+    fun getInt(key: String, defaultValue: Int): Int? = sharedPref?.getInt(key, defaultValue)
+    fun getFloat(key: String, defaultValue: Float): Float? = sharedPref?.getFloat(key, defaultValue)
+    fun getLong(key: String, defaultValue: Long): Long? = sharedPref?.getLong(key, defaultValue)
+
     enum class EKSharedPreferencesType {
         DEFAULT,
         SETTINGS
