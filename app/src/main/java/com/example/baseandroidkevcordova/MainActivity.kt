@@ -12,6 +12,7 @@ import com.example.baseandroidmodulekevcordova.extensions.bindGlideImage
 import com.example.baseandroidmodulekevcordova.extensions.openWebPage
 import com.example.baseandroidmodulekevcordova.extensions.runDefaultAnimation
 import com.example.baseandroidmodulekevcordova.permissions.*
+import com.example.baseandroidmodulekevcordova.ui.navigation.KEvent
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
@@ -81,7 +82,18 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun eventExample() {
+        val myEvent = KEvent("Hello Event")
+        myEvent.getContentIfNotHandle()?.let {
+            Log.i(
+                TAG,
+                "appliedActivityExtensions: Event example: handle String:${it}"
+            )
+        }
+    }
+
     fun appliedActivityExtensions() {
+        eventExample()
         openWebPage("https://developer.android.com")
     }
 
