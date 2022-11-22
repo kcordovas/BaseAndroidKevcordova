@@ -7,13 +7,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.example.baseandroidkevcordova.databinding.ActivityMainBinding
-import com.example.baseandroidmodulekevcordova.extensions.GlideTypeCrop
-import com.example.baseandroidmodulekevcordova.extensions.bindGlideImage
-import com.example.baseandroidmodulekevcordova.extensions.openWebPage
-import com.example.baseandroidmodulekevcordova.extensions.runDefaultAnimation
+import com.example.baseandroidmodulekevcordova.extensions.*
 import com.example.baseandroidmodulekevcordova.permissions.*
 import com.example.baseandroidmodulekevcordova.ui.navigation.KEvent
-import java.util.*
 
 class MainActivity : AppCompatActivity() {
     companion object {
@@ -94,6 +90,7 @@ class MainActivity : AppCompatActivity() {
 
     fun appliedActivityExtensions() {
         eventExample()
+        Log.d(TAG, "appliedActivityExtensions: $networkConnectionStatus")
         openWebPage("https://developer.android.com")
     }
 
