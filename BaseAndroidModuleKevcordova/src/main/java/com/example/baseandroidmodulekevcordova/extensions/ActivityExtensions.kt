@@ -3,7 +3,7 @@ package com.example.baseandroidmodulekevcordova.extensions
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
-import android.inputmethodservice.InputMethodService
+import android.net.ConnectivityManager
 import android.net.Uri
 import android.view.View
 import android.view.inputmethod.InputMethodManager
@@ -35,6 +35,10 @@ fun Context.openWebPage(url: String) {
 fun Activity.hideKeyboard() {
     hideKeyboard(currentFocus ?: View(this))
 }
+
+val Context.networkConnectionStatus: Boolean
+    get() = (getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager)
+        .activeNetworkInfo?.isConnectedOrConnecting == true
 
 /**
  * Hide Keyboard
