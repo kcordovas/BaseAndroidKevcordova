@@ -1,20 +1,27 @@
 package com.example.baseandroidkevcordova
 
 import android.app.Application
+import android.content.Context
 import com.example.baseandroidmodulekevcordova.storage.KSharedPreferences
+import com.example.baseandroidmodulekevcordova.storage.preferences.KSharedPreferencesManager
 
 class BaseAndroidKevCordovaApp : Application() {
     companion object {
-        const val SHARED_PREFERENCES_NAME = "BaseAndroidPreferences"
-        private lateinit var sharedPref: KSharedPreferences
+        private lateinit var sharedPrefManager: MySharedPreferences
 
         fun getKSharedPreferences(): KSharedPreferences {
-            return sharedPref
+            return sharedPrefManager.prefDefault
         }
     }
 
     override fun onCreate() {
         super.onCreate()
-        sharedPref = KSharedPreferences(baseContext, SHARED_PREFERENCES_NAME)
+        sharedPrefManager = MySharedPreferences(this)
     }
 }
+
+internal class MySharedPreferences(context: Context): KSharedPreferencesManager(
+    context = context,
+    nameDefaultSharedPreferences = BuildConfig.APPLICATION_ID,
+    nameSettingsSharedPreferences = "${BuildConfig.APPLICATION_ID}.SETTINGS"
+)
